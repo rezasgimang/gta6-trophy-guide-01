@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI Platinum Roadmap</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; works offline</p>
+  <h1>Leonida Trophy Guide</h1>
+  <p class="lede">Every trophy, its official description and a clear guide in plain words — plus a tracker that remembers your progress and a roadmap to the platinum.</p>
+</header>
+
+<main>
+<section class="progress-card" id="progress-card" aria-label="Your progress">
+  <div class="progress-big">
+    <span id="progress-count">0 of 55</span>
+    <span id="progress-pct">0% to platinum</span>
+  </div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar-wrap">
+    <div class="bar-fill" id="progress-bar" style="width:0%"></div>
+  </div>
+  <div class="grade-chips" id="grade-chips"></div>
+  <p class="progress-note">Tick a trophy when you earn it — your progress is saved in this browser. Export it to keep a backup, or import it on another device.</p>
+</section>
+
+<section class="roadmap" aria-label="Road to the platinum">
+  <h2>Road to the Platinum</h2>
+  <p class="section-intro">Roughly 200 hours, difficulty about 4/10. Play in this order and nothing gets left behind.</p>
+  <ol class="phases">
+    <li><strong>Phase 1 — Chapter 1, do it now.</strong> Meditate on Lucia&rsquo;s balcony before Chapter 1 ends. It is the one spot that may not come back. Keep a separate Chapter 1 save as insurance.</li>
+    <li><strong>Phase 2 — Play the story, Chapters 1–4.</strong> All 12 story trophies pop as you go. Take the time-sensitive stranger race &ldquo;Race Against Yago&rdquo; in Chapter 3 when it appears.</li>
+    <li><strong>Phase 3 — Collect as you travel.</strong> Grab collectible cards, WAiNK It at new places, register new vehicles to Scooter Bros, and drive everything you have not driven yet.</li>
+    <li><strong>Phase 4 — Strangers and activities.</strong> Finish 8 stranger strands (including the six character finales), then the races, shooting range, fishing, bowling, arcade and drone races.</li>
+    <li><strong>Phase 5 — Cleanup, then 100%.</strong> Robs, laundering, spending and challenges after the finale. 100% completion is the last trophy — and the platinum pops with it.</li>
+  </ol>
+  <div class="missable-callout" id="missable-callout">
+    <strong>&#9888; One potentially missable trophy:</strong>
+    <span><strong>Positive Mental Attitude</strong> — meditate at every spot in Leonida. Lucia&rsquo;s Chapter 1 balcony meditation may disappear after Chapter 1, and there is no mission replay. Do it in Chapter 1 and keep a Chapter 1 save. Whether that one spot is strictly required is not yet proven — the safe play is to do it anyway.</span>
+  </div>
+</section>
+
+<section class="controls" aria-label="Find trophies">
+  <div class="control-row">
+    <label class="search-label">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+    <label class="grade-label">Grade
+      <select id="grade-select">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="check-label"><input id="spoiler-toggle" type="checkbox"> Hide story spoilers</label>
+    <label class="check-label"><input id="earned-only" type="checkbox"> Earned only</label>
+  </div>
+  <div class="kind-row" id="kind-row" role="group" aria-label="Filter by kind">
+    <button type="button" data-kind="all" class="kind-btn active">All <span class="count" data-count="all"></span></button>
+    <button type="button" data-kind="story" class="kind-btn">Story <span class="count" data-count="story"></span></button>
+    <button type="button" data-kind="missable" class="kind-btn">Missable <span class="count" data-count="missable"></span></button>
+    <button type="button" data-kind="collectible" class="kind-btn">Collectibles <span class="count" data-count="collectible"></span></button>
+    <button type="button" data-kind="activity" class="kind-btn">Activities <span class="count" data-count="activity"></span></button>
+    <button type="button" data-kind="online" class="kind-btn">Online <span class="count" data-count="online"></span></button>
+  </div>
+  <div class="control-row actions">
+    <button id="export-btn" type="button">Export progress</button>
+    <label class="import-label">Import progress <input id="import-input" type="file" accept="application/json,.json"></label>
+    <button id="sample-btn" type="button">Try sample progress</button>
+    <button id="reset-btn" type="button">Reset progress</button>
+  </div>
+  <p class="online-note" id="online-note" hidden>There are <strong>0 online trophies</strong> — everything in GTA VI is single-player. No online play is needed for the platinum.</p>
+  <p class="result-line" id="result-line"></p>
+</section>
+
+<section class="trophy-list" id="cards" aria-live="polite"></section>
+
+<section class="about">
+  <h2>About this guide</h2>
+  <p>Unofficial fan guide — not affiliated with Rockstar Games, Sony or PlayStation. Trophy names, descriptions and grades are shown as PlayStation publishes them. Every guide is written in our own words for this page, drawing on the public trophy lists and marking the steps the community has not yet confirmed as <em>unconfirmed</em> rather than guessing. Sources for the list: OutputLag, Playday, GTABase and Press Start (Chapter 2 name) — each trophy links its sources.</p>
+  <p>Your checklist lives only in this browser (localStorage). Nothing is uploaded, and the page loads no files from the network — it works with the network off.</p>
+</section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide &middot; GTA VI trophy list as published 18 Nov 2026 &middot; 55 trophies &middot; 1 Platinum, 2 Gold, 6 Silver, 46 Bronze</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

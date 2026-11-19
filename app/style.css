@@ -1,0 +1,294 @@
+/* Leonida Trophy Guide — a clear, warm paper look with a Vice City sunset header.
+   No web fonts, no images: every rule below is plain CSS, so the page works offline. */
+:root {
+  --paper: #faf5ec;
+  --card: #fffdf8;
+  --ink: #241d1a;
+  --muted: #6f6259;
+  --line: #e6dccb;
+  --sunset-a: #2b1055;
+  --sunset-b: #7597de;
+  --accent: #ff5e8a;
+  --accent-ink: #a4133c;
+  --gold: #b8860b;
+  --silver: #5f6b7a;
+  --bronze: #9a5b28;
+  --platinum: #2e7d9e;
+  --good: #1e7d4f;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, var(--sunset-a) 0%, #7b2d8b 45%, #ff5e8a 78%, #ff9e57 100%);
+  color: #fff;
+  padding: 44px 24px 36px;
+  text-align: center;
+}
+.hero .eyebrow {
+  margin: 0 0 10px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.hero .lede {
+  margin: 0 auto;
+  max-width: 640px;
+  font-size: 17px;
+  opacity: 0.95;
+}
+main { max-width: 1060px; margin: 0 auto; padding: 0 20px 40px; }
+h2 { font-size: 24px; margin: 0 0 8px; }
+.section-intro { color: var(--muted); margin: 0 0 16px; }
+
+/* Progress */
+.progress-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: -22px auto 28px;
+  box-shadow: 0 8px 24px rgba(43, 16, 85, 0.12);
+  position: relative;
+}
+.progress-big {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#progress-count { font-size: 34px; font-weight: bold; }
+#progress-pct { font-family: system-ui, -apple-system, sans-serif; font-size: 15px; color: var(--muted); }
+.bar {
+  height: 14px;
+  background: #efe6d6;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7b2d8b, #ff5e8a, #ff9e57);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.grade-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  background: #f3ecdd;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.chip strong { font-weight: 700; }
+.progress-note { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+
+/* Roadmap */
+.roadmap { margin-bottom: 28px; }
+.phases {
+  list-style: none;
+  counter-reset: phase;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.phases li {
+  counter-increment: phase;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+}
+.phases li::before {
+  content: "Step " counter(phase);
+  display: block;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin-bottom: 4px;
+}
+.missable-callout {
+  margin-top: 14px;
+  background: #fff3e0;
+  border: 1px solid #f0c98a;
+  border-left: 5px solid #d98e00;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+}
+
+/* Controls */
+.controls {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 4px 14px rgba(43, 16, 85, 0.08);
+}
+.control-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.control-row + .control-row { margin-top: 12px; }
+.search-label, .grade-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.search-label input {
+  font: inherit;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid #cfc4ae;
+  border-radius: 8px;
+  width: 280px;
+  max-width: 60vw;
+  background: #fff;
+}
+.grade-label select {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #cfc4ae;
+  border-radius: 8px;
+  background: #fff;
+}
+.check-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.kind-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.kind-btn {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  padding: 7px 12px;
+  border: 1px solid #cfc4ae;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+.kind-btn:hover { border-color: var(--accent); }
+.kind-btn.active { background: var(--sunset-a); color: #fff; border-color: var(--sunset-a); }
+.kind-btn .count { opacity: 0.75; font-size: 12px; }
+.actions button, .import-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.actions button {
+  border: 1px solid var(--sunset-a);
+  background: var(--sunset-a);
+  color: #fff;
+}
+.actions button:hover { background: #3d1a72; }
+#reset-btn { background: #fff; color: var(--ink); border-color: #cfc4ae; }
+.import-label { border: 1px solid #cfc4ae; background: #fff; }
+.import-label input { font-size: 12px; margin-left: 6px; }
+.online-note {
+  margin: 12px 0 0;
+  font-size: 14px;
+  background: #eef4ff;
+  border: 1px solid #c3d4f5;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.result-line { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+
+/* Trophy cards */
+.trophy-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card.earned { border-color: #9fc7ae; background: #f6fbf7; }
+.card-head { display: flex; align-items: flex-start; gap: 10px; }
+.card-head input[type="checkbox"] { width: 22px; height: 22px; margin: 2px 0 0; flex: none; accent-color: var(--good); cursor: pointer; }
+.card-title { flex: 1; min-width: 0; }
+.card-title h3 { margin: 0; font-size: 19px; line-height: 1.25; }
+.card-title h3.earned-name { text-decoration: line-through; text-decoration-thickness: 2px; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.badge {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+.badge.platinum { background: var(--platinum); }
+.badge.gold { background: var(--gold); }
+.badge.silver { background: var(--silver); }
+.badge.bronze { background: var(--bronze); }
+.badge.kind { background: #efe6d6; color: var(--ink); }
+.badge.missable { background: #b3261e; }
+.badge.hidden-tag { background: #5b4a68; }
+.badge.unconfirmed { background: #8a6d00; }
+.official { font-style: italic; color: #4a3f38; margin: 0; font-size: 15px; }
+.official .label, .guide-text .label { font-style: normal; font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 2px; }
+.guide-text { margin: 0; font-size: 15px; }
+.sources { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; color: var(--muted); margin: 0; }
+.sources a { color: #5b4a9e; }
+.sources a + a::before { content: " · "; }
+.spoiler-hidden {
+  border: 1px dashed #b9a98c;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
+.empty { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 32px 0; }
+
+.about { margin-top: 32px; font-size: 15px; color: var(--muted); }
+.about p { margin: 0 0 10px; }
+footer { text-align: center; color: var(--muted); font-size: 13px; padding: 18px 20px 28px; }
+@media (max-width: 640px) {
+  .hero h1 { font-size: 32px; }
+  .progress-card { margin-top: -14px; }
+  #progress-count { font-size: 26px; }
+}
